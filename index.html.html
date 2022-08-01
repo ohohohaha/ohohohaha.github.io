@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>웹페이지 float</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <style>
+        /* 초기값 */
+        *{margin: 0; padding: 0; box-sizing: border-box;}
+        /* 헤더 */
+        header{
+            padding: 80px; 
+            text-align: center;
+            background: seagreen;
+            color: white;
+        }
+        header h1{font-size: 40px;}
+
+        /* 네비게이션 */
+        nav{
+            overflow: hidden;
+            background-color: salmon; 
+        }
+        nav a{
+            float: left;
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+        nav a:hover, .dropdown:hover .drop_btn{background-color: seagreen;}
+        nav a.right{float: right;}
+
+        .dropdown{float: left; overflow: hidden;}
+
+        .dropdown .drop_btn{
+            font-size: 1em;
+            border: none;
+            color: #fff;
+            outline: none;
+            padding: 14px 16px;
+            background-color: inherit;
+            margin: 0;
+        }
+
+        /* 메인부모 */
+        .container{
+            
+            /*border: 1px solid red;*/
+        }
+        .container::after{
+            content: '';
+            clear: both;
+            display: block;
+        }
+        .container .box{
+            float: left;
+            padding: 20px;
+            height: 50vh;
+            
+        }
+        /* 어사이드 */
+        aside{
+            background-color: #ccc;
+           
+            /*text-align: left;*/
+            
+        }
+        aside .imgbox{
+            background-color: #ddd;
+            padding: 50px 100px;
+        }
+        /* 섹션 */
+        section{
+            /*background-color: darkgreen;*/
+            padding: 20%;
+            
+       }
+        section .imgbox{
+            background-color: #ddd;
+            padding: 50px 100px;
+        }
+        /* 풋터 */
+        footer{
+            clear: both;
+            background-color: rgb(38, 44, 56);
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        /* 반응형웹 */
+
+        @media screen and (max-width: 700px) {
+            aside{width: 100%;}
+            section{width: 100%;}
+            .imgbox{padding: 50px 50px;}
+        }
+
+
+    </style>
+</head>
+<body>
+    <header>
+        <h1>My Website</h1>
+        <p>qmffkqmffmqkfmk</p>
+    </header>
+    <nav>
+        <a href="#">Link1</a>
+        <a href="#">Link2</a>
+        <a href="#">Link3</a>
+        <div class="dropdown">
+            <button class="drop_btn">link4&nbsp;<i class="fa-regular fa-bars"></i></button>
+            <div class="drop_content">
+                <a href="#">subList</a>
+                <a href="#">subList</a>
+            </div>
+        </div>
+        
+        <a href="#" class="right">Link4</a>
+    </nav>
+
+    <div class="container">
+        <aside class="box">
+            <h2>About me</h2>
+            <p>qmffkq</p>
+            <div class="imgbox">img</div> <!--연습은 색으로 하고 실제로는 이미지로 채우기-->
+    
+        </aside>
+
+        <section class="box">
+            <h2>Title Heaading</h2>
+            <p>qmffkqm</p>
+            <div class="imgbox">img</div> <!--연습은 색으로 하고 실제로는 이미지로 채우기-->
+
+
+        </section>
+
+    </div>
+
+    <footer>
+        @2022 by hyojeong
+    </footer>
+
+
+</body>
+</html>
